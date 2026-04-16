@@ -1,0 +1,16 @@
+{
+  "name": "parse-healer",
+  "owner": {
+    "name": "vwvwbg"
+  },
+  "plugins": [
+    {
+      "name": "parse-healer",
+      "description": "Analyze WoW DPS performance by comparing Warcraft Logs data against top-ranked players and spec guides",
+      "source": {
+        "source": "github",
+        "repo": "vwvwbg/parse-healer"
+      }
+    }
+  ]
+}
