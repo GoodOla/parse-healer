@@ -1,3 +1,10 @@
+---
+name: wcl-compare
+description: Analyze WoW DPS performance by comparing Warcraft Logs data against top-ranked players and spec guides
+argument-hint: <report_url> <player> [<report2_url> <player2>]
+allowed-tools: Bash(python3 *) Read WebSearch
+---
+
 # WCL Compare — Warcraft Logs DPS Analysis
 
 Compare two players' performance on the same boss fight using Warcraft Logs data.
