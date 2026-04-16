@@ -124,18 +124,15 @@ Buff uptime differences are often the single largest explainable factor in perfo
 From `tables.buffs.auras`, categorize and compare uptime:
 
 **Tier 1 — Must-maintain (uptime gaps directly reduce throughput):**
-- Consumables: Flask, Food, Augment Rune, weapon enhancement — should be ~100%. Any gap = free stats lost
-- Self-maintenance buffs identified from the guide (spec-dependent, e.g., weapon imbues, stances, auras)
-- Key proc buffs that the player should optimize around (e.g., trinket procs, set bonuses)
+- Consumables (Flask, Food, Augment Rune, weapon enhancement) — should be ~100%
+- Spec-specific must-maintain buffs identified from the guide search in Step 3
 
 **Tier 2 — External buffs (affect comparison fairness):**
-- Augmentation Evoker buffs (Ebon Might, Prescience) — if one player has Aug and the other doesn't, this alone can explain 5-15% throughput difference
-- External Power Infusion — flag whether it was external or self-cast
-- Other externals (Innervate for healers, etc.)
+- Augmentation Evoker buffs, external Power Infusion, and other externals
+- If one player has these and the other doesn't, note the fairness impact
 
 **Tier 3 — Raid buffs and misc:**
-- Standard raid buffs (Fortitude, Intellect, etc.)
-- Passive/proc effects
+- Standard raid buffs, passive/proc effects
 
 For every Tier 1 buff with >5% uptime difference between the two players, flag it explicitly and estimate the throughput impact. Missing consumables should be called out prominently — they indicate preparation issues.
 

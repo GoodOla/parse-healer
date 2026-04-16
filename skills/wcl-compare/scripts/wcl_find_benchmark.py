@@ -13,7 +13,12 @@ Outputs the benchmark player's report code, fight ID, and name.
 import argparse
 import json
 import sys
+import time
 from wcl_client import get_token, query
+
+# Maximum age for benchmark logs (seconds). Avoids using logs from before a patch.
+MAX_LOG_AGE_DAYS = 14
+MAX_LOG_AGE_MS = MAX_LOG_AGE_DAYS * 86400 * 1000
 
 
 # WCL spec IDs → class/spec names (common DPS specs)
@@ -219,6 +224,7 @@ def find_benchmark(collected: dict, token: str | None = None, verbose: bool = Tr
     median_dur = sorted(durations)[len(durations) // 2] if durations else player_duration
 
     # Filter candidates
+    now_ms = int(time.time() * 1000)
     candidates = []
     for i, r in enumerate(rankings):
         rank = i + 1
@@ -227,6 +233,15 @@ def find_benchmark(collected: dict, token: str | None = None, verbose: bool = Tr
         fight_id = r.get("report", {}).get("fightID", 0)
         name = r.get("name", "?")
         dps = r.get("amount", 0)
+        log_time = r.get("startTime", 0)
+
+        # Skip logs older than MAX_LOG_AGE_DAYS
+        if log_time and (now_ms - log_time) > MAX_LOG_AGE_MS:
+            age_days = (now_ms - log_time) / 86400000
+            if verbose:
+                print(f"  Skip #{rank} {name} ({dps:,.0f} {metric.upper()}, {dur:.0f}s) — "
+                      f"too old ({age_days:.0f} days)", file=sys.stderr)
+            continue
 
         # Skip #1-3 (likely padded)
         if rank <= 3:

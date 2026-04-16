@@ -2,19 +2,9 @@
 
 When the collected data shows `player.role == "healer"`, use these modules instead of the DPS-specific ones. Modules A (Overview & Stats) and G (Buff Coverage) remain the same for both roles, with the healer-specific additions below.
 
-## Module G Additions for Healers: Spec-Specific Must-Maintain Buffs
+## Module G Additions for Healers: Must-Maintain Buffs
 
-In addition to the standard Tier 1 buffs (consumables, etc.), healers have spec-specific buffs that must be maintained for optimal throughput. Compare these uptimes carefully (verify current list with guide search):
-
-- **Restoration Druid**: Lifebloom (should be active on a target at all times), Efflorescence
-- **Discipline Priest**: Atonement count during ramp windows, Power Word: Shield uptime
-- **Holy Paladin**: Glimmer of Light count, Beacon of Light (must never drop)
-- **Restoration Shaman**: Earth Shield (should be near 100% on tank), Riptide coverage
-- **Mistweaver Monk**: Renewing Mist count, Enveloping Mist on key targets
-- **Preservation Evoker**: Echo count before ramp, Temporal Anomaly coverage
-- **Holy Priest**: Renew coverage, Prayer of Mending bounces
-
-A healer who lets Lifebloom or Earth Shield drop for extended periods is losing significant passive throughput. Flag any gaps > 5 seconds prominently.
+In addition to the standard Tier 1 buffs (consumables, etc.), healers have spec-specific buffs that must be maintained for optimal throughput. The guide search in Step 3 should identify which buffs are critical for the specific spec — use that as the reference, not hardcoded lists. Compare uptimes on those buffs carefully and flag significant gaps.
 
 ## Module B (Healer): Healing Breakdown
 
@@ -40,14 +30,7 @@ Replace opener analysis — healers don't have a fixed opener. Instead:
 - Check if CDs overlap unnecessarily (wasted throughput)
 - Calculate theoretical max uses vs actual uses
 
-Common healer CDs by spec (verify with guide search):
-- Holy Paladin: Avenging Wrath, Daybreak, Divine Toll
-- Restoration Druid: Tranquility, Flourish, Incarnation
-- Holy Priest: Divine Hymn, Apotheosis, Holy Word: Salvation
-- Discipline Priest: Evangelism/Spirit Shell, Power Word: Barrier, Rapture
-- Restoration Shaman: Spirit Link Totem, Healing Tide Totem, Ascendance
-- Mistweaver Monk: Revival/Restoral, Invoke Yu'lon, Celestial Conduit
-- Preservation Evoker: Dream Flight, Rewind, Stasis
+Identify the major healing cooldowns from the guide search in Step 3. Do not rely on hardcoded CD lists — abilities change between patches.
 
 ## Module E (Healer): Mana Efficiency
 
